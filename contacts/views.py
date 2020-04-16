@@ -25,14 +25,6 @@ def contact(request):
         contact= Contact(listing=listing, listing_id=listing_id, name=name, email=email, phone=phone, message=message, user_id=user_id)
         contact.save()
 
-        #send mail
-        send_mail(
-            'place enquirey from travelguide',
-            'there has been a enquirey for "+ listing +". Sign in for more info',
-            'anushavrf108@gmail.com',
-            ['anu0895@gmail.com'],
-            fail_silently=False,
-        )
 
         messages.success(request, 'your request has been submitted succesfully, our advisor will get back to you as soon as possible')
         return redirect('/listings/'+listing_id)

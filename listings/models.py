@@ -12,7 +12,7 @@ class Listing (models.Model):
     state = models.CharField(max_length=100)
     zipcode = models.CharField(max_length=20)
     description = models.TextField(blank=True)
-    price = models.IntegerField()
+    price = models.CharField(max_length=100)
     daysrequired = models.IntegerField()
     suggested_season= models.CharField(max_length=100)
     photo_main = models.ImageField(upload_to='photos/%Y/%m/%d/', blank=True)
